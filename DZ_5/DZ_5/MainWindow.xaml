@@ -1,0 +1,69 @@
+﻿<Window x:Class="DZ_5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DZ_5"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="16" Grid.RowSpan="1" Content="Автобусы" FontSize="32" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <Button Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="4" Grid.RowSpan="1" Click="Button_Click" Content="Вывести список" FontSize="16"/>
+            <Button Grid.Row="5" Grid.Column="9" Grid.ColumnSpan="7" Grid.RowSpan="1" Click="Button_Cliick_Max" Content="3 самых заполненнных" FontSize="16" VerticalAlignment="Center"/>
+            <Button Grid.Row="2" Grid.Column="13" Grid.ColumnSpan="3" Grid.RowSpan="1" Click="Button_Cliick_Search" Content="  Поиск  " FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <TextBox x:Name="tb1" Grid.Row="2" Grid.Column="10" Grid.ColumnSpan="3" Grid.RowSpan="1" VerticalAlignment="Center"/>
+            <TextBlock Grid.Row="2" Grid.Column="6" Grid.ColumnSpan="4" Grid.RowSpan="1" VerticalAlignment="Center" Text="Введите пункт отправления:" HorizontalAlignment="Right"/>
+        <DataGrid x:Name="dgrid" AutoGenerateColumns="False" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="7" Grid.RowSpan="5"  IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="№" Binding="{Binding Path=id}" Width="31" />
+                    <DataGridTextColumn Header="Откуда" Binding="{Binding Path=pointdep}" Width="92" />
+                    <DataGridTextColumn Header="Куда" Binding="{Binding Path=pointarr}" Width="92" />
+                    <DataGridTextColumn Header="Кол-во пассажиров" Binding="{Binding Path=sum}" Width="120" />
+                    
+                </DataGrid.Columns>
+            </DataGrid>
+
+        <DataGrid x:Name="dgrid2" AutoGenerateColumns="False" Grid.Row="6" Grid.Column="9" Grid.ColumnSpan="7" Grid.RowSpan="3"  IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="№" Binding="{Binding Path=id}" Width="31" />
+                <DataGridTextColumn Header="Откуда" Binding="{Binding Path=pointdep}" Width="92" />
+                <DataGridTextColumn Header="Куда" Binding="{Binding Path=pointarr}" Width="92" />
+                <DataGridTextColumn Header="Кол-во пассажиров" Binding="{Binding Path=sum}" Width="120" />
+
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>
